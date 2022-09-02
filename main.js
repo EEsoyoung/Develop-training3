@@ -22,31 +22,39 @@ const docInit = {
     root : document.getElementById(`root`),
     header : document.createElement('header'),
     headerNav : document.createElement('nav'),
-    main : document.createElement('main')
+    main : document.createElement('main'),
+    article : document.createElement('root'),
+    aside : document.createElement('aside')
 }
 //root
 styleing.size(docInit.root,"100vw","100vh");
 //header
 docInit.root.appendChild(docInit.header);
 styleing.size(docInit.header,"100vw","10vh");
-styleing.flexset(docInit.header,"center")
+styleing.flexset(docInit.header,"center");
+docInit.header.style.borderBottom = "1px solid #333"
 //headerNav
 docInit.header.appendChild(docInit.headerNav);
-styleing.size(docInit.headerNav,"40%","100%");
-docInit.headerNav.style.display = "flex";
-docInit.headerNav.style.justifyContent = "space-around";
-docInit.headerNav.style.alignItems = "center";
+styleing.size(docInit.headerNav,"50%","100%");
+styleing.flexset(docInit.headerNav,"space-between","center");
 //main
 docInit.root.appendChild(docInit.main);
+styleing.size(docInit.main,"100vw","100%");
+styleing.flexset(docInit.main)
+//article
+docInit.main.appendChild(docInit.article);
+styleing.size(docInit.article,"60%","100%");
+//aside
+docInit.main.appendChild(docInit.aside);
+styleing.size(docInit.aside,"40%","100%");
 
 
 
-for(let i = 0; i < header.length; i++){
+header.forEach((item)=>{
   let element = document.createElement('span');
   docInit.headerNav.appendChild(element);
-  element.textContent = header[i];
-}
-
+  element.textContent = item;
+});
 
 
 
